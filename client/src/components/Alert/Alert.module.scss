@@ -1,0 +1,68 @@
+@import "../../../styles/variables";
+@import "../../../styles/font";
+@import "../../../styles/mixins";
+
+.alert{
+    @include font-regular;
+    @include font-size($font-size-m);
+    display: block;
+    padding: $space-base;
+    margin: auto;
+    color: $color-white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    animation: slidein 0.5s;
+    text-align: center;
+
+    &.fixed {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: $space-6;
+        z-index: 2;
+        width: 50%;
+        border-radius: $space-base;
+
+        @include bp-mobile {
+            width: 80%
+        }
+    }
+
+    &.inherit {
+        width: 100%;
+    }
+}
+
+@keyframes slidein {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    20% {
+        top: $space-8;
+        opacity: 1;
+    }
+    40% {
+        top: $space-6;
+        opacity: 1;
+    }
+    80%  {
+        top: $space-8;
+        opacity: 1;
+    }
+    100% {
+        top: $space-base;
+        opacity: 1;
+    }
+  }
+
+.success{
+    background-color: $color-green;
+}
+
+.info{
+    background-color: $color-blue;
+}
+
+.error{
+    background-color: $color-red;
+}

@@ -1,0 +1,52 @@
+@import "../../../styles/variables";
+@import "../../../styles/font";
+@import "../../../styles/mixins";
+
+.container{
+    position: relative;
+    margin-bottom: $space-6;
+}
+
+.field {
+    width: 100%;
+    @include font-regular();
+    @include font-size($font-size-m);
+    height: 50px;
+}
+
+
+.default{
+    .field{
+        color: $color-white;
+        background-color: $color-third;
+        border: 0;
+        border-bottom: 1px solid $color-primary;
+
+        &:hover{
+            border-bottom-color: $color-white;
+        }
+
+        &:focus{
+            outline: none;
+            border-bottom-color: $color-white;
+            border-bottom-width: 2px;
+        }
+
+        &::placeholder {
+            color: $color-white;
+            opacity: 0.8;
+        }
+    }
+}
+
+.invalid{
+    .field {
+        border: 1px solid $color-red;
+    }
+
+    p{
+        color: $color-red;
+        display: block;
+        margin: $space-3 0;
+    }
+}

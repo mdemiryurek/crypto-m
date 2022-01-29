@@ -1,0 +1,58 @@
+@import "../../../styles/variables";
+@import "../../../styles/font";
+@import "../../../styles/mixins";
+
+.button{
+    width: 100%;
+    @include font-regular();
+    @include font-size($font-size-m);
+    @include transition(0.5s);
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    gap: $space-6;
+    padding: 0 $space-6;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: $space-8;
+    text-align: center;
+
+    &[disabled]:not(.loading){
+        background-color: $color-grey;
+        border-color: $color-grey;
+        color: $color-third;
+        cursor: not-allowed;
+    }
+}
+
+.primary{
+    color: $color-white;
+    background: $color-secondary;
+    border:2px solid $color-secondary;
+
+    &:hover{
+        border-color: $color-third;
+        background-color: $color-third;
+    }
+}
+
+.secondary{
+    color: $color-primary;
+    background: $color-white;
+    border:2px solid $color-white;
+
+    &:hover{
+        border-color: $color-black;
+        background-color: $color-black;
+        color: $color-white;
+    }
+}
+
+.loading{
+    cursor: not-allowed;
+    background-color: $color-grey;
+    border-color: $color-grey;
+    color: $color-white;
+}

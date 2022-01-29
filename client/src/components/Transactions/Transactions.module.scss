@@ -1,0 +1,38 @@
+@import "../../../styles/variables";
+@import "../../../styles/font";
+@import "../../../styles/mixins";
+
+.list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: $space-6;
+
+    @include bp-mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    @include font-size($font-size-s);
+    width: auto;
+    padding: $space-6;
+    border-radius: $space-base;
+    background-color: $color-dark;
+    gap: $space-6;
+    color: $color-white;
+
+    img {
+        width: 100%;
+        margin-top: $space-6;
+
+        @include bp-mobile {
+            width: auto;
+            height: 120px;
+        }
+    }
+
+    
+}

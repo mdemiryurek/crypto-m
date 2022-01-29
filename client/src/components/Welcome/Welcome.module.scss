@@ -1,0 +1,106 @@
+@import "../../../styles/variables";
+@import "../../../styles/font";
+@import "../../../styles/mixins";
+
+.welcome {
+    @include flexbox();
+    gap: $space-8;
+    margin-bottom: $space-10;
+
+    > div {
+        @include flex(1);
+    }
+
+    @include bp-mobile {
+        display: block;
+    }
+}
+
+.ethereumCard{
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    border-radius: $space-base;
+    background: $color-secondary;
+    background: linear-gradient(342deg, #2972d2 0%, #d95776 50%, #fcb045 100%);
+    padding: $space-6;
+    width: 80%;
+    height: 200px;
+    margin: auto;
+
+    @include bp-mobile {
+        width: 100%;
+        margin-top: $space-9;
+    }
+}
+
+.cardIcons{
+    @include flexbox();
+    @include justify-content(space-between);
+}
+
+.form {
+    width: 100%;
+    border-radius: $space-base;
+    background-color: $color-third;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: $space-6;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.buttonWrapper{
+    width: 50%;
+    margin-top: $space-8;
+
+    @include bp-mobile {
+        width: 100%;
+    }
+}
+
+.features{
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+
+    & > div{
+        border: 1px solid $color-third;
+        color: $color-white;
+        @include font-size($font-size-l);
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(center);
+        height: 50%;
+        width: 33%;
+        padding: $space-6;
+
+        &:nth-child(1){
+            border-top-left-radius: $space-base;
+        }
+        &:nth-child(3){
+            border-top-right-radius: $space-base;
+        }
+        &:nth-child(4){
+            border-bottom-left-radius: $space-base;
+        }
+        &:nth-child(6){
+            border-bottom-right-radius: $space-base;
+        }
+    }
+
+    @include bp-mobile {
+        margin-bottom: $space-8;
+
+        & > div{
+            height: 120px;
+        }
+    }
+}
+
+.warningMessage { 
+    margin-bottom: $space-6;
+    color: $color-grey;
+}
