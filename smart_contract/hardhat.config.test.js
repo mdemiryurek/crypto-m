@@ -6,6 +6,10 @@ module.exports = {
     ropsten: {
       url: '',
       accounts: ['']
+    },
+    mainnet: {
+      url: '',
+      accounts: ['']
     }
   }
 }

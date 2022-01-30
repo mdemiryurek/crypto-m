@@ -26,6 +26,10 @@ const App = () => {
           <a href="https://metamask.io/download/" target="_blank" alt="Download MetaMask">Download MetaMask</a>
         </Alert>
       )}
+      <Alert type='info'
+          position='inherit'>
+          Please note; this web site's smart contract works on Ropsten Test Network.<br/>
+        </Alert>
       <Header></Header>
 
       <main className={styles.main}>
