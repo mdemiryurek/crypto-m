@@ -31,7 +31,6 @@ export const TransactionProvider = ({children}) =>{
         try{
             if (ethereum) {
                 const transactionContract = getEthereumContract();
-                console.log(transactionContract);
                 const availableTransactions = await transactionContract.getAllTransactions();
                 const structuredTransactions = availableTransactions.map((transaction) => ({
                     addressTo: transaction.receiver,
